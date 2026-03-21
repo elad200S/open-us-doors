@@ -51,6 +51,11 @@ export default {
           DEFAULT: "hsl(var(--navy))",
           foreground: "hsl(var(--navy-foreground))",
         },
+        "navy-dark": {
+          DEFAULT: "hsl(var(--navy-dark))",
+          foreground: "hsl(var(--navy-dark-foreground))",
+        },
+        "footer-bg": "hsl(var(--footer-bg))",
         "usa-red": {
           DEFAULT: "hsl(var(--usa-red))",
           foreground: "hsl(var(--usa-red-foreground))",

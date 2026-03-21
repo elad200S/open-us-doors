@@ -9,65 +9,80 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-navy relative overflow-hidden flex items-center">
-      {/* Subtle star pattern background */}
-      <div className="absolute inset-0 opacity-[0.06]" style={{
-        backgroundImage: `radial-gradient(circle, hsl(var(--navy-foreground)) 1px, transparent 1px)`,
-        backgroundSize: '40px 40px',
+    <section className="min-h-screen bg-navy-dark relative overflow-hidden flex items-center">
+      <div className="absolute inset-0 opacity-[0.04]" style={{
+        backgroundImage: `radial-gradient(circle, hsl(var(--navy-dark-foreground)) 1px, transparent 1px)`,
+        backgroundSize: '48px 48px',
       }} />
 
-      <div className="max-w-6xl mx-auto px-6 py-20 w-full relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text side */}
-          <div className="order-2 md:order-1">
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20 w-full relative z-10">
+        <div className="grid md:grid-cols-[55fr_45fr] gap-12 md:gap-8 items-center">
+          {/* Flag side — left on desktop */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease }}
+            className="order-1 flex justify-center"
+          >
+            <div className="w-full max-w-lg">
+              <USAFlag />
+            </div>
+          </motion.div>
+
+          {/* Text side — right on desktop (RTL natural) */}
+          <div className="order-2">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
-              className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-6"
+              transition={{ duration: 0.6, delay: 0.3, ease }}
+              className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-6"
             >
-              הזדמנויות עבודה בארה״ב
+              הזדמנויות עבודה בארה״ב 🇺🇸
             </motion.p>
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4, ease }}
-              className="text-navy-foreground text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-balance"
+              transition={{ duration: 0.7, delay: 0.5, ease }}
+              className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight"
+              style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
             >
-              פתחת את הדלת.
+              תעבוד.
               <br />
-              עכשיו תיכנס לאמריקה.
+              תרוויח.
+              <br />
+              <span className="relative inline-block">
+                תתקדם.
+                <span className="absolute bottom-0 right-0 w-full h-1 bg-usa-red rounded-full" />
+              </span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-navy-foreground/60 mt-6 text-base md:text-lg max-w-md leading-relaxed"
+              transition={{ duration: 0.6, delay: 0.8, ease }}
+              className="text-navy-dark-foreground/50 mt-6 text-base md:text-lg max-w-md leading-relaxed"
             >
-              עבודות סרוויס בארה״ב לצעירים אחרי צבא — עם ליווי מלא מהרגע הראשון
+              עבודות שטח בתחומי הבית בארה״ב — Garage Door, Locksmith, Air Duct, Chimney ועוד. עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1, ease }}
+              transition={{ duration: 0.6, delay: 1.1, ease }}
               onClick={scrollToForm}
-              className="mt-8 bg-usa-red text-usa-red-foreground font-bold text-base px-10 py-4 rounded-lg transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+              className="mt-8 bg-usa-red text-usa-red-foreground font-bold text-base px-10 py-4 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(178,34,52,0.3)] hover:shadow-[0_0_30px_rgba(178,34,52,0.5)]"
             >
-              אני רוצה לשמוע עוד ›
+              רוצה לשמוע עוד? השאר פרטים ›
             </motion.button>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.4, ease }}
+              className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-navy-dark-foreground/50 text-sm"
+            >
+              <span>✓ ללא עלות</span>
+              <span>✓ ללא התחייבות</span>
+              <span>✓ נציג יחזור תוך 24 שעות</span>
+            </motion.div>
           </div>
-
-          {/* Flag side */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease }}
-            className="order-1 md:order-2 flex justify-center"
-          >
-            <div className="w-full max-w-sm md:max-w-md">
-              <USAFlag />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -1,11 +1,11 @@
 const Footer = () => (
-  <footer className="bg-navy py-6">
-    <div className="max-w-6xl mx-auto px-6 flex items-center justify-between text-navy-foreground text-xs">
+  <footer className="bg-footer-bg py-6">
+    <div className="max-w-6xl mx-auto px-6 flex items-center justify-between text-white text-xs">
       <div className="flex items-center gap-2">
         <span className="font-bold tracking-tight">Garage Door</span>
         <span className="text-sm">🇺🇸</span>
       </div>
-      <span className="text-navy-foreground/50">© 2025 Garage Door | כל הזכויות שמורות</span>
+      <span className="text-white/40">© 2025 Garage Door | כל הזכויות שמורות</span>
       <a
         href="https://wa.link/wbci19"
         target="_blank"
