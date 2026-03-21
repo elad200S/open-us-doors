@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const benefits = [
-  { title: "ליווי מלא", desc: "אנחנו לא עוזבים אותך אחרי ההרשמה. מהמסמכים ועד הנחיתה." },
-  { title: "עבודות סרוויס אמיתיות", desc: "מסעדות, בתי מלון, אירועים — תפקידים שמשלמים טוב." },
-  { title: "חוויה שמשנה", desc: "שנה בחו״ל שתספר עליה שנים." },
+  { emoji: "🍽️", title: "עבודות סרוויס אמיתיות", desc: "מסעדות, אירועים, בתי מלון — תפקידים שמשלמים טוב בדולרים" },
+  { emoji: "🛡️", title: "ליווי מלא", desc: "מהמסמכים ועד הנחיתה, אנחנו איתך בכל שלב" },
+  { emoji: "✈️", title: "חוויה שמשנה חיים", desc: "שנה בארה״ב שתספר עליה לנצח" },
 ];
 
 const BenefitsSection = () => (
@@ -18,7 +18,7 @@ const BenefitsSection = () => (
       >
         למה Garage Door
       </motion.p>
-      <div className="grid md:grid-cols-3 gap-12 md:gap-8">
+      <div className="grid md:grid-cols-3 gap-10">
         {benefits.map((b, i) => (
           <motion.div
             key={i}
@@ -26,9 +26,10 @@ const BenefitsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="border-t-2 border-gold pt-6"
+            className="border-t-[3px] border-usa-red pt-6"
           >
-            <h3 className="text-lg font-bold text-foreground mb-3">{b.title}</h3>
+            <span className="text-3xl block mb-4">{b.emoji}</span>
+            <h3 className="text-lg font-bold text-navy mb-3">{b.title}</h3>
             <p className="text-text-secondary text-sm leading-relaxed">{b.desc}</p>
           </motion.div>
         ))}
