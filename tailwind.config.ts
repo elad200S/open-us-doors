@@ -82,20 +82,6 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "flag-wave": {
-          "0%": { transform: "skewY(0deg) scaleX(1)" },
-          "25%": { transform: "skewY(-1.5deg) scaleX(0.98)" },
-          "50%": { transform: "skewY(0deg) scaleX(1)" },
-          "75%": { transform: "skewY(1.5deg) scaleX(0.98)" },
-          "100%": { transform: "skewY(0deg) scaleX(1)" },
-        },
-        "flag-ripple": {
-          "0%": { transform: "perspective(600px) rotateY(0deg)" },
-          "25%": { transform: "perspective(600px) rotateY(3deg)" },
-          "50%": { transform: "perspective(600px) rotateY(0deg)" },
-          "75%": { transform: "perspective(600px) rotateY(-3deg)" },
-          "100%": { transform: "perspective(600px) rotateY(0deg)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
