@@ -22,9 +22,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease }}
-            className="order-1 flex justify-center"
+            className="order-1 flex justify-center items-center"
           >
-            <div className="w-full max-w-lg">
+            <div className="w-full max-w-lg flex justify-center">
               <USAFlag />
             </div>
           </motion.div>
