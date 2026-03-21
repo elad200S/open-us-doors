@@ -47,13 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          foreground: "hsl(var(--navy-foreground))",
+        },
+        "usa-red": {
+          DEFAULT: "hsl(var(--usa-red))",
+          foreground: "hsl(var(--usa-red-foreground))",
+        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",
-        },
-        hero: {
-          DEFAULT: "hsl(var(--hero-bg))",
-          foreground: "hsl(var(--hero-foreground))",
         },
         "surface-alt": "hsl(var(--surface-alt))",
         "text-secondary": "hsl(var(--text-secondary))",
@@ -73,15 +77,26 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)", filter: "blur(4px)" },
-          "100%": { opacity: "1", transform: "translateY(0)", filter: "blur(0px)" },
+        "flag-wave": {
+          "0%": { transform: "skewY(0deg) scaleX(1)" },
+          "25%": { transform: "skewY(-1.5deg) scaleX(0.98)" },
+          "50%": { transform: "skewY(0deg) scaleX(1)" },
+          "75%": { transform: "skewY(1.5deg) scaleX(0.98)" },
+          "100%": { transform: "skewY(0deg) scaleX(1)" },
+        },
+        "flag-ripple": {
+          "0%": { transform: "perspective(600px) rotateY(0deg)" },
+          "25%": { transform: "perspective(600px) rotateY(3deg)" },
+          "50%": { transform: "perspective(600px) rotateY(0deg)" },
+          "75%": { transform: "perspective(600px) rotateY(-3deg)" },
+          "100%": { transform: "perspective(600px) rotateY(0deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "flag-wave": "flag-wave 4s ease-in-out infinite",
+        "flag-ripple": "flag-ripple 3s ease-in-out infinite",
       },
     },
   },
