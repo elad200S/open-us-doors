@@ -25,15 +25,18 @@
     --ring: 349 72% 42%;
     --radius: 0.5rem;
 
-    --navy: 240 30% 33%;
+    --navy: 236 38% 24%;
     --navy-foreground: 0 0% 100%;
+    --navy-dark: 237 42% 16%;
+    --navy-dark-foreground: 0 0% 100%;
     --usa-red: 349 72% 42%;
     --usa-red-foreground: 0 0% 100%;
-    --gold: 48 92% 53%;
+    --gold: 49 92% 52%;
     --gold-foreground: 220 20% 14%;
     --surface-alt: 224 100% 97%;
     --text-secondary: 0 0% 42%;
     --text-gray: 0 0% 55%;
+    --footer-bg: 237 48% 9%;
   }
 }
 
