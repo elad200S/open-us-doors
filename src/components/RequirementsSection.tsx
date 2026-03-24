@@ -7,19 +7,16 @@ const cards = [
     emoji: "🏅",
     title: "אחרי שירות צבאי",
     desc: "גיל 20–26",
-    highlighted: false,
   },
   {
     emoji: "🚗",
     title: "רישיון נהיגה בתוקף",
     desc: "חובה",
-    highlighted: false,
   },
   {
     emoji: "🗣️",
     title: "אנגלית בסיסית",
     desc: "לא חייב להיות שוטף",
-    highlighted: false,
   },
   {
     emoji: "US",
