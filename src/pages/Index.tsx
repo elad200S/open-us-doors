@@ -17,10 +17,10 @@ const Index = () => (
     <JobTypesSection />
     <StatsSection />
     <RequirementsSection />
+    <LeadFormSection />
     <ProgramSection />
     <HowItWorksSection />
     <TestimonialsSection />
-    <LeadFormSection />
     <Footer />
     <WhatsAppFloat />
   </>
