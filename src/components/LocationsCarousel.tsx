@@ -4,66 +4,109 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Region images
-import oregonImg from "@/assets/locations/oregon.jpg";
-import orangeCountyImg from "@/assets/locations/orange-county.jpg";
-import tampaImg from "@/assets/locations/tampa.jpg";
-import sanDiegoImg from "@/assets/locations/san-diego.jpg";
-import hawaiiImg from "@/assets/locations/hawaii.jpg";
-import desertImg from "@/assets/locations/desert.jpg";
-import snowMountainsImg from "@/assets/locations/snow-mountains.jpg";
-import greenHillsImg from "@/assets/locations/green-hills.jpg";
-import southernTownImg from "@/assets/locations/southern-town.jpg";
-import citySkylineImg from "@/assets/locations/city-skyline.jpg";
-import plainsImg from "@/assets/locations/plains.jpg";
-import rockyMountainsImg from "@/assets/locations/rocky-mountains.jpg";
-import newEnglandImg from "@/assets/locations/new-england.jpg";
-import texasRanchImg from "@/assets/locations/texas-ranch.jpg";
-import pacificNwImg from "@/assets/locations/pacific-nw.jpg";
-
-// Map each state to a representative image
-const stateImageMap: Record<string, string> = {
-  AL: southernTownImg, AK: snowMountainsImg, AZ: desertImg, AR: greenHillsImg,
-  CA: orangeCountyImg, CO: rockyMountainsImg, CT: newEnglandImg, DE: newEnglandImg,
-  FL: tampaImg, GA: southernTownImg, HI: hawaiiImg, ID: rockyMountainsImg,
-  IL: citySkylineImg, IN: greenHillsImg, IA: plainsImg, KS: plainsImg,
-  KY: greenHillsImg, LA: southernTownImg, ME: newEnglandImg, MD: citySkylineImg,
-  MA: newEnglandImg, MI: greenHillsImg, MN: greenHillsImg, MS: southernTownImg,
-  MO: greenHillsImg, MT: rockyMountainsImg, NE: plainsImg, NV: desertImg,
-  NH: newEnglandImg, NJ: citySkylineImg, NM: desertImg, NY: citySkylineImg,
-  NC: greenHillsImg, ND: plainsImg, OH: greenHillsImg, OK: texasRanchImg,
-  OR: oregonImg, PA: newEnglandImg, RI: newEnglandImg, SC: southernTownImg,
-  SD: plainsImg, TN: southernTownImg, TX: texasRanchImg, UT: desertImg,
-  VT: newEnglandImg, VA: greenHillsImg, WA: pacificNwImg, WV: greenHillsImg,
-  WI: greenHillsImg, WY: rockyMountainsImg,
-};
+// Unique state images
+import alabamaImg from "@/assets/locations/alabama.jpg";
+import alaskaImg from "@/assets/locations/alaska.jpg";
+import arizonaImg from "@/assets/locations/arizona.jpg";
+import arkansasImg from "@/assets/locations/arkansas.jpg";
+import californiaImg from "@/assets/locations/california.jpg";
+import coloradoImg from "@/assets/locations/colorado.jpg";
+import connecticutImg from "@/assets/locations/connecticut.jpg";
+import delawareImg from "@/assets/locations/delaware.jpg";
+import floridaImg from "@/assets/locations/florida.jpg";
+import georgiaImg from "@/assets/locations/georgia.jpg";
+import hawaiiImg from "@/assets/locations/hawaii-new.jpg";
+import idahoImg from "@/assets/locations/idaho.jpg";
+import illinoisImg from "@/assets/locations/illinois.jpg";
+import indianaImg from "@/assets/locations/indiana.jpg";
+import iowaImg from "@/assets/locations/iowa.jpg";
+import kansasImg from "@/assets/locations/kansas.jpg";
+import kentuckyImg from "@/assets/locations/kentucky.jpg";
+import louisianaImg from "@/assets/locations/louisiana.jpg";
+import maineImg from "@/assets/locations/maine.jpg";
+import marylandImg from "@/assets/locations/maryland.jpg";
+import massachusettsImg from "@/assets/locations/massachusetts.jpg";
+import michiganImg from "@/assets/locations/michigan.jpg";
+import minnesotaImg from "@/assets/locations/minnesota.jpg";
+import mississippiImg from "@/assets/locations/mississippi.jpg";
+import missouriImg from "@/assets/locations/missouri.jpg";
+import montanaImg from "@/assets/locations/montana.jpg";
+import nebraskaImg from "@/assets/locations/nebraska.jpg";
+import nevadaImg from "@/assets/locations/nevada.jpg";
+import newHampshireImg from "@/assets/locations/new-hampshire.jpg";
+import newJerseyImg from "@/assets/locations/new-jersey.jpg";
+import newMexicoImg from "@/assets/locations/new-mexico.jpg";
+import newYorkImg from "@/assets/locations/new-york.jpg";
+import northCarolinaImg from "@/assets/locations/north-carolina.jpg";
+import northDakotaImg from "@/assets/locations/north-dakota.jpg";
+import ohioImg from "@/assets/locations/ohio.jpg";
+import oklahomaImg from "@/assets/locations/oklahoma.jpg";
+import oregonImg from "@/assets/locations/oregon-new.jpg";
+import pennsylvaniaImg from "@/assets/locations/pennsylvania.jpg";
+import rhodeIslandImg from "@/assets/locations/rhode-island.jpg";
+import southCarolinaImg from "@/assets/locations/south-carolina.jpg";
+import southDakotaImg from "@/assets/locations/south-dakota.jpg";
+import tennesseeImg from "@/assets/locations/tennessee.jpg";
+import texasImg from "@/assets/locations/texas.jpg";
+import utahImg from "@/assets/locations/utah.jpg";
+import vermontImg from "@/assets/locations/vermont.jpg";
+import virginiaImg from "@/assets/locations/virginia.jpg";
+import washingtonImg from "@/assets/locations/washington.jpg";
+import westVirginiaImg from "@/assets/locations/west-virginia.jpg";
+import wisconsinImg from "@/assets/locations/wisconsin.jpg";
+import wyomingImg from "@/assets/locations/wyoming.jpg";
 
 const states = [
-  { name: "ALABAMA", abbr: "AL" }, { name: "ALASKA", abbr: "AK" },
-  { name: "ARIZONA", abbr: "AZ" }, { name: "ARKANSAS", abbr: "AR" },
-  { name: "CALIFORNIA", abbr: "CA" }, { name: "COLORADO", abbr: "CO" },
-  { name: "CONNECTICUT", abbr: "CT" }, { name: "DELAWARE", abbr: "DE" },
-  { name: "FLORIDA", abbr: "FL" }, { name: "GEORGIA", abbr: "GA" },
-  { name: "HAWAII", abbr: "HI" }, { name: "IDAHO", abbr: "ID" },
-  { name: "ILLINOIS", abbr: "IL" }, { name: "INDIANA", abbr: "IN" },
-  { name: "IOWA", abbr: "IA" }, { name: "KANSAS", abbr: "KS" },
-  { name: "KENTUCKY", abbr: "KY" }, { name: "LOUISIANA", abbr: "LA" },
-  { name: "MAINE", abbr: "ME" }, { name: "MARYLAND", abbr: "MD" },
-  { name: "MASSACHUSETTS", abbr: "MA" }, { name: "MICHIGAN", abbr: "MI" },
-  { name: "MINNESOTA", abbr: "MN" }, { name: "MISSISSIPPI", abbr: "MS" },
-  { name: "MISSOURI", abbr: "MO" }, { name: "MONTANA", abbr: "MT" },
-  { name: "NEBRASKA", abbr: "NE" }, { name: "NEVADA", abbr: "NV" },
-  { name: "NEW\nHAMPSHIRE", abbr: "NH" }, { name: "NEW\nJERSEY", abbr: "NJ" },
-  { name: "NEW\nMEXICO", abbr: "NM" }, { name: "NEW\nYORK", abbr: "NY" },
-  { name: "NORTH\nCAROLINA", abbr: "NC" }, { name: "NORTH\nDAKOTA", abbr: "ND" },
-  { name: "OHIO", abbr: "OH" }, { name: "OKLAHOMA", abbr: "OK" },
-  { name: "OREGON", abbr: "OR" }, { name: "PENNSYLVANIA", abbr: "PA" },
-  { name: "RHODE\nISLAND", abbr: "RI" }, { name: "SOUTH\nCAROLINA", abbr: "SC" },
-  { name: "SOUTH\nDAKOTA", abbr: "SD" }, { name: "TENNESSEE", abbr: "TN" },
-  { name: "TEXAS", abbr: "TX" }, { name: "UTAH", abbr: "UT" },
-  { name: "VERMONT", abbr: "VT" }, { name: "VIRGINIA", abbr: "VA" },
-  { name: "WASHINGTON", abbr: "WA" }, { name: "WEST\nVIRGINIA", abbr: "WV" },
-  { name: "WISCONSIN", abbr: "WI" }, { name: "WYOMING", abbr: "WY" },
+  { name: "ALABAMA", abbr: "AL", img: alabamaImg },
+  { name: "ALASKA", abbr: "AK", img: alaskaImg },
+  { name: "ARIZONA", abbr: "AZ", img: arizonaImg },
+  { name: "ARKANSAS", abbr: "AR", img: arkansasImg },
+  { name: "CALIFORNIA", abbr: "CA", img: californiaImg },
+  { name: "COLORADO", abbr: "CO", img: coloradoImg },
+  { name: "CONNECTICUT", abbr: "CT", img: connecticutImg },
+  { name: "DELAWARE", abbr: "DE", img: delawareImg },
+  { name: "FLORIDA", abbr: "FL", img: floridaImg },
+  { name: "GEORGIA", abbr: "GA", img: georgiaImg },
+  { name: "HAWAII", abbr: "HI", img: hawaiiImg },
+  { name: "IDAHO", abbr: "ID", img: idahoImg },
+  { name: "ILLINOIS", abbr: "IL", img: illinoisImg },
+  { name: "INDIANA", abbr: "IN", img: indianaImg },
+  { name: "IOWA", abbr: "IA", img: iowaImg },
+  { name: "KANSAS", abbr: "KS", img: kansasImg },
+  { name: "KENTUCKY", abbr: "KY", img: kentuckyImg },
+  { name: "LOUISIANA", abbr: "LA", img: louisianaImg },
+  { name: "MAINE", abbr: "ME", img: maineImg },
+  { name: "MARYLAND", abbr: "MD", img: marylandImg },
+  { name: "MASSACHUSETTS", abbr: "MA", img: massachusettsImg },
+  { name: "MICHIGAN", abbr: "MI", img: michiganImg },
+  { name: "MINNESOTA", abbr: "MN", img: minnesotaImg },
+  { name: "MISSISSIPPI", abbr: "MS", img: mississippiImg },
+  { name: "MISSOURI", abbr: "MO", img: missouriImg },
+  { name: "MONTANA", abbr: "MT", img: montanaImg },
+  { name: "NEBRASKA", abbr: "NE", img: nebraskaImg },
+  { name: "NEVADA", abbr: "NV", img: nevadaImg },
+  { name: "NEW\nHAMPSHIRE", abbr: "NH", img: newHampshireImg },
+  { name: "NEW\nJERSEY", abbr: "NJ", img: newJerseyImg },
+  { name: "NEW\nMEXICO", abbr: "NM", img: newMexicoImg },
+  { name: "NEW\nYORK", abbr: "NY", img: newYorkImg },
+  { name: "NORTH\nCAROLINA", abbr: "NC", img: northCarolinaImg },
+  { name: "NORTH\nDAKOTA", abbr: "ND", img: northDakotaImg },
+  { name: "OHIO", abbr: "OH", img: ohioImg },
+  { name: "OKLAHOMA", abbr: "OK", img: oklahomaImg },
+  { name: "OREGON", abbr: "OR", img: oregonImg },
+  { name: "PENNSYLVANIA", abbr: "PA", img: pennsylvaniaImg },
+  { name: "RHODE\nISLAND", abbr: "RI", img: rhodeIslandImg },
+  { name: "SOUTH\nCAROLINA", abbr: "SC", img: southCarolinaImg },
+  { name: "SOUTH\nDAKOTA", abbr: "SD", img: southDakotaImg },
+  { name: "TENNESSEE", abbr: "TN", img: tennesseeImg },
+  { name: "TEXAS", abbr: "TX", img: texasImg },
+  { name: "UTAH", abbr: "UT", img: utahImg },
+  { name: "VERMONT", abbr: "VT", img: vermontImg },
+  { name: "VIRGINIA", abbr: "VA", img: virginiaImg },
+  { name: "WASHINGTON", abbr: "WA", img: washingtonImg },
+  { name: "WEST\nVIRGINIA", abbr: "WV", img: westVirginiaImg },
+  { name: "WISCONSIN", abbr: "WI", img: wisconsinImg },
+  { name: "WYOMING", abbr: "WY", img: wyomingImg },
 ];
 
 const LocationsCarousel = () => {
@@ -115,14 +158,14 @@ const LocationsCarousel = () => {
           {/* Navigation arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute -right-1 md:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm shadow-md flex items-center justify-center text-cta-blue hover:bg-background transition-colors"
+            className="absolute -right-1 md:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm shadow-md flex items-center justify-center text-gold hover:bg-background transition-colors"
             aria-label="Previous"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute -left-1 md:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm shadow-md flex items-center justify-center text-cta-blue hover:bg-background transition-colors"
+            className="absolute -left-1 md:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm shadow-md flex items-center justify-center text-gold hover:bg-background transition-colors"
             aria-label="Next"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -133,7 +176,6 @@ const LocationsCarousel = () => {
             <div className="flex">
               {states.map((state, i) => {
                 const isActive = i === selectedIndex;
-                const img = stateImageMap[state.abbr];
 
                 return (
                   <div
@@ -146,15 +188,15 @@ const LocationsCarousel = () => {
                       }`}
                     >
                       <div
-                        className={`w-full aspect-square rounded-full p-1.5 group cursor-pointer transition-shadow duration-500 ${
-                          isActive
-                            ? "border-[3px] border-cta-blue shadow-[0_0_24px_rgba(58,125,255,0.35)]"
-                            : "border-[2px] border-border"
-                        }`}
+                        className={`w-full aspect-square rounded-full p-1.5 group cursor-pointer transition-shadow duration-500`}
+                        style={{
+                          border: isActive ? "3px solid #D4AF37" : "2px solid hsl(var(--border))",
+                          boxShadow: isActive ? "0 0 24px rgba(212,175,55,0.35)" : "none",
+                        }}
                       >
                         <div className="w-full h-full rounded-full overflow-hidden relative">
                           <img
-                            src={img}
+                            src={state.img}
                             alt={state.name}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             loading="lazy"
