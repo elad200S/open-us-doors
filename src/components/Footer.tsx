@@ -1,9 +1,7 @@
 const Footer = () => (
   <footer className="bg-footer-bg py-6">
     <div className="max-w-6xl mx-auto px-6 flex items-center justify-between text-white text-xs">
-      <div className="flex items-center gap-2">
-        <img src="/images/logo.png" alt="Money Overseas" className="h-8" />
-      </div>
+      <span className="font-black tracking-tight text-white font-serif">Money Over Seas</span>
       <span className="text-white/40">© 2025 Money Overseas | כל הזכויות שמורות</span>
       <a
         href="https://wa.me/12164079325"

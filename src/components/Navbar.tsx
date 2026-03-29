@@ -16,7 +16,7 @@ const Navbar = () => {
 
         {/* Logo centered */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          <img src="/images/logo.png" alt="Money Overseas" className="h-10 mix-blend-multiply" />
+          <span className="text-xl font-black tracking-tight text-foreground font-serif">Money Over Seas</span>
         </div>
 
         {/* Empty spacer for balance */}
