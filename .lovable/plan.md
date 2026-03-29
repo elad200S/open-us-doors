@@ -1,27 +1,27 @@
 
-# Realistic Waving Flag with Canvas Animation
+מובן. נעשה את זה פשוט ומדויק — שינוי רקע כדי שהלוגו ייראה טבעי ולא "מודבק".
 
-## Current Problem
-The flag uses simple CSS transforms (`skewY`, `rotateY`) on the entire SVG — this creates a rigid tilting effect, not a realistic fabric wave.
+1) איחוד צבע הרקע לבז' חם בכל האתר
+- בקובץ `src/index.css` אקבע את הרקע הראשי בדיוק ל־`#F5F1E8`.
+- איישר גם את `--secondary` לגוון בז' תואם, כדי למנוע מעברונים/כתמים בגוון אחר בין סקשנים.
 
-## Solution: HTML Canvas with Sine-Wave Distortion
+2) הסרת רקעים לא תואמים
+- אעדכן סקשנים שמשתמשים ברקע שונה (כמו `bg-secondary`) ל־`bg-background` כדי לקבל זרימה אחידה ונקייה.
+- בפועל זה בעיקר `RequirementsSection` (ולפי הצורך עוד רכיבים חריגים).
 
-Replace the SVG+CSS approach with an **HTML Canvas** component that:
+3) שילוב הלוגו בצורה טבעית ב-Hero
+- אשאיר את הלוגו ממורכז, אבל אתן לו מעטפת רקע עדינה בגוון הבז' (שקופה/רכה) כדי שלא ירגיש כמו תמונה "מודבקת".
+- אוריד תחושת "הדבקה" גם ע"י ריכוך אפקטי צל/ניגוד סביב הלוגו.
 
-1. **Renders the flag to an offscreen canvas** — stripes, canton, stars (same drawing logic)
-2. **Applies per-column sine-wave displacement** — each vertical slice of the flag gets a different `y` offset based on a sine function that varies with time and x-position, creating a traveling wave effect
-3. **Adds perspective foreshortening** — columns further into the wave compress slightly in width, simulating 3D fabric depth
-4. **Runs via `requestAnimationFrame`** — smooth 60fps continuous animation
+4) הדגל נשאר ללא שינוי
+- לא נוגעים בכלל ב־`USAFlag.tsx` (צבעים/קונטרסט/אנימציה נשארים כמו שהם).
+- השינוי הוא רק בשכבת הרקע והאינטגרציה של הלוגו.
 
-### Technical approach (single file: `USAFlag.tsx`):
-- Draw the static flag once onto an offscreen canvas (stripes + canton + stars)
-- In the animation loop, for each vertical column (1px wide), calculate `dy = amplitude * sin(x * frequency - time * speed)` and draw that column slice shifted vertically
-- Add slight horizontal scaling per column based on the wave's derivative to simulate depth
-- Parameters: amplitude ~12px, frequency ~0.02, speed ~2.5
-- The flag attaches to the right edge (RTL — flagpole on right), so amplitude increases from right to left (more wave at the free end)
+5) בדיקת תוצאה במובייל ודסקטופ
+- וידוא שהלוגו נראה טבעי גם ב־Navbar וגם ב־Hero, בלי לפגוע בקריאות הטקסט ובמראה הפרימיום.
 
-### Files to modify:
-1. **`src/components/USAFlag.tsx`** — full rewrite to canvas-based approach
-2. **`tailwind.config.ts`** — remove unused `flag-wave` and `flag-ripple` keyframes (optional cleanup)
-
-This approach produces a convincingly realistic waving flag effect purely in the browser with no libraries.
+פרטים טכניים (קבצים שיתעדכנו)
+- `src/index.css` — איחוד צבעי רקע למערכת אחת.
+- `src/components/RequirementsSection.tsx` — מעבר לרקע אחיד.
+- `src/components/HeroSection.tsx` — התאמת אינטגרציית הלוגו לרקע.
+- (אם יידרש ליטוש) `src/components/Navbar.tsx` — התאמה עדינה לשפה החדשה.
