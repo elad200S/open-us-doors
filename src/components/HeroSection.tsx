@@ -44,7 +44,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.3, ease }}
                 className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-8"
               >
-                ​
+                <span>{"\u200B"}</span>
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}

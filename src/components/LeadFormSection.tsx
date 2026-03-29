@@ -50,7 +50,7 @@ const LeadFormSection = () => {
           <h2 className="text-2xl md:text-3xl font-black text-foreground text-balance leading-tight">
             ענו על כמה שאלות קצרות ונבדוק יחד אם זה מתאים לכם
           </h2>
-          <p className="text-muted-foreground text-sm mt-3">​</p>
+          <p className="text-muted-foreground text-sm mt-3"><span>{"\u200B"}</span></p>
         </motion.div>
 
         <AnimatePresence mode="wait">

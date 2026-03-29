@@ -89,7 +89,7 @@ const JobTypesSection = () => (
         transition={{ duration: 0.5, ease }}
         className="text-navy text-xs font-bold tracking-[0.2em] uppercase mb-4 text-center"
       >
-        ​
+        <span>{"\u200B"}</span>
       </motion.p>
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
