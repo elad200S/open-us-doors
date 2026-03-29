@@ -19,8 +19,8 @@ const cards = [
     desc: "לא חייב להיות שוטף",
   },
   {
-    emoji: "US",
-    title: "אזרחות אמריקאית",
+    emoji: "🌍",
+    title: "אזרחות מתאימה",
     desc: "תנאים מועדפים",
     highlighted: true,
     badge: "הטבה מיוחדת",
@@ -70,10 +70,11 @@ const RequirementsSection = () => (
             )}
 
             <div className="text-4xl mb-5 flex justify-center">
-              {card.emoji === "US" ? (
-                <span className="text-3xl font-black text-foreground">US</span>
-              ) : (
-                <span>{card.emoji}</span>
+              <span>{card.emoji}</span>
+              {false && (
+                <span />
+              ) || (
+                null
               )}
             </div>
 

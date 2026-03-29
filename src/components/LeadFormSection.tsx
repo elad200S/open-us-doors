@@ -1,9 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const visaOptions = ["כן, יש לי ויזה", "לא, אין לי ויזה", "לא בטוח/ה"];
-const citizenshipOptions = ["אזרחות ישראלית", "אזרחות אמריקאית", "אזרחות כפולה", "אחר"];
-const startOptions = ["בהקדם האפשרי", "תוך חודש-חודשיים", "תוך 3–6 חודשים", "עוד לא בטוח/ה"];
+const visaOptions = ["כן", "לא", "בתהליכים"];
+const citizenshipOptions = ["ישראלי", "אמריקאי", "אחר"];
+const startOptions = ["עוד חודש", "עוד חודשיים", "שלושה חודשים", "מעל שלושה חודשים"];
 
 const LeadFormSection = () => {
   const [name, setName] = useState("");
@@ -32,10 +32,10 @@ const LeadFormSection = () => {
   const clearError = (field: string) => setErrors((p) => ({ ...p, [field]: false }));
 
   const inputClass = (field: string) =>
-    `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-foreground placeholder:text-muted-foreground text-sm outline-none focus:border-usa-red focus:ring-1 focus:ring-usa-red/30 transition-all duration-200`;
+    `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-foreground placeholder:text-muted-foreground text-sm outline-none focus:border-cta-blue focus:ring-1 focus:ring-cta-blue/30 transition-all duration-200`;
 
   const selectClass = (field: string, value: string) =>
-    `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-sm outline-none focus:border-usa-red focus:ring-1 focus:ring-usa-red/30 transition-all duration-200 appearance-none cursor-pointer ${value ? "text-foreground" : "text-muted-foreground"}`;
+    `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-sm outline-none focus:border-cta-blue focus:ring-1 focus:ring-cta-blue/30 transition-all duration-200 appearance-none cursor-pointer ${value ? "text-foreground" : "text-muted-foreground"}`;
 
   return (
     <section id="lead-form" className="py-20 md:py-28 bg-background">
@@ -88,7 +88,7 @@ const LeadFormSection = () => {
                   onChange={(e) => { setVisa(e.target.value); clearError("visa"); }}
                   className={selectClass("visa", visa)}
                 >
-                  <option value="" disabled>האם יש לי ויזה לארה״ב?</option>
+                  <option value="" disabled>האם יש לי ויזה?</option>
                   {visaOptions.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground text-xs">▼</span>
@@ -120,9 +120,9 @@ const LeadFormSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-usa-red text-usa-red-foreground font-bold text-sm py-4 rounded-xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.98] shadow-[0_4px_16px_rgba(178,34,52,0.25)] mt-2"
+                className="w-full bg-cta-blue text-cta-blue-foreground font-bold text-sm py-4 rounded-xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.98] shadow-[0_4px_16px_rgba(58,125,255,0.25)] mt-2"
               >
-                בדקו התאמה 🇺🇸
+                בדקו התאמה
               </button>
 
               <p className="text-center text-muted-foreground/60 text-xs mt-3">🔒 הפרטים שלך לא מועברים לאף גורם חיצוני</p>
@@ -135,7 +135,7 @@ const LeadFormSection = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="text-center py-10"
             >
-              <div className="text-5xl mb-5">🇺🇸</div>
+              <div className="text-5xl mb-5">✅</div>
               <h3 className="text-xl font-bold text-foreground mb-3">!קיבלנו! נחזור אליך בקרוב</h3>
               <p className="text-muted-foreground text-sm mb-6">בינתיים אפשר לכתוב לנו בוואטסאפ:</p>
               <a

@@ -6,7 +6,7 @@ const jobs = [
     emoji: "🚪",
     title: "Garage Door",
     short: "התקנה ותיקון דלתות מוסך",
-    extended: "אחד התחומים הכי מבוקשים בארה״ב עם ביקוש גבוה לאורך כל השנה והכנסות גבוהות",
+    extended: "אחד התחומים הכי מבוקשים עם ביקוש גבוה לאורך כל השנה והכנסות גבוהות",
   },
   {
     emoji: "🔑",
@@ -24,7 +24,7 @@ const jobs = [
     emoji: "🛒",
     title: "Shopping Carts",
     short: "ניהול עגלות קניות",
-    extended: "כניסה קלה לשוק האמריקאי עם עבודה יציבה ופשוטה יחסית",
+    extended: "כניסה קלה לשוק עם עבודה יציבה ופשוטה יחסית",
   },
   {
     emoji: "🏠",
@@ -80,7 +80,7 @@ const JobCard = ({ job, index }: { job: typeof jobs[0]; index: number }) => {
 };
 
 const JobTypesSection = () => (
-  <section className="py-24 md:py-32 bg-background border-t-[6px] border-usa-red">
+  <section className="py-24 md:py-32 bg-background border-t-[6px] border-cta-blue">
     <div className="max-w-6xl mx-auto px-6">
       <motion.p
         initial={{ opacity: 0, y: 12 }}
@@ -98,7 +98,7 @@ const JobTypesSection = () => (
         transition={{ duration: 0.5, delay: 0.1, ease }}
         className="text-navy text-3xl md:text-4xl font-black mb-16 text-center"
       >
-        תחומי העבודה שלנו בארה״ב
+        תחומי העבודה שלנו
       </motion.h2>
 
       {/* Top row: 3 cards */}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const steps = [
   { num: "01", title: "ממלא טופס", desc: "30 שניות, בלי בירוקרטיה" },
   { num: "02", title: "שיחת ייעוץ חינמית", desc: "נסביר הכל ונבדוק התאמה" },
-  { num: "03", title: "יוצא לארה״ב", desc: "אנחנו מטפלים בכל השאר" },
+  { num: "03", title: "יוצא לעבוד", desc: "אנחנו מטפלים בכל השאר" },
 ];
 
 const HowItWorksSection = () => (
@@ -28,7 +28,7 @@ const HowItWorksSection = () => (
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className={`py-8 md:px-8 ${i < 2 ? "md:border-l border-b md:border-b-0 border-border" : ""}`}
           >
-            <span className="text-usa-red text-4xl font-black tracking-tight block mb-4">{s.num}</span>
+            <span className="text-cta-blue text-4xl font-black tracking-tight block mb-4">{s.num}</span>
             <h3 className="text-lg font-bold text-navy mb-2">{s.title}</h3>
             <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
           </motion.div>
