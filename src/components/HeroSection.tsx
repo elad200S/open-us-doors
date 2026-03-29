@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logoImg from "@/assets/logo.png";
 import USAFlag from "@/components/USAFlag";
 
 const ease = [0.16, 1, 0.3, 1];
@@ -33,7 +32,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease }}
               className="mb-12"
             >
-              <img src={logoImg} alt="Money Overseas" className="h-28 md:h-36 object-contain mix-blend-lighten" />
+              <span className="text-4xl md:text-5xl font-black tracking-tight text-navy-dark-foreground font-serif">Money Over Seas</span>
             </motion.div>
 
             {/* Text content centered */}
