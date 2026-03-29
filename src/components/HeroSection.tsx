@@ -53,12 +53,10 @@ const HeroSection = () => {
                 className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight font-serif text-6xl"
                 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
               >
-                תעבוד.
-                <br />
-                תרוויח.
+                רוצה לעבוד בארה"ב ולהרוויח
                 <br />
                 <span className="relative inline-block">
-                  תתקדם.
+                  10,000$ בחודש?
                   <span className="absolute bottom-0 right-0 w-full h-1 bg-cta-blue rounded-full" />
                 </span>
               </motion.h1>
