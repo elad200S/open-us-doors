@@ -44,13 +44,13 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.3, ease }}
                 className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-8"
               >
-                הזדמנויות עבודה בחו״ל 🌍
+                ​
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5, ease }}
-                className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight"
+                className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight text-4xl font-serif"
                 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
               >
                 תעבוד.
