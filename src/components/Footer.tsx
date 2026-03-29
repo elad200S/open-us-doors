@@ -6,7 +6,7 @@ const Footer = () => (
       </div>
       <span className="text-white/40">© 2025 Money Overseas | כל הזכויות שמורות</span>
       <a
-        href="https://wa.link/wbci19"
+        href="https://wa.me/12164079325"
         target="_blank"
         rel="noopener noreferrer"
         className="text-[#25D366] hover:opacity-80 transition-opacity"
