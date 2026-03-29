@@ -55,10 +55,7 @@ const HeroSection = () => {
               >
                 רוצה לעבוד בארה"ב ולהרוויח
                 <br />
-                <span className="relative inline-block">
-                  10,000$ בחודש?
-                  <span className="absolute bottom-0 right-0 w-full h-1 bg-cta-blue rounded-full" />
-                </span>
+                10,000$ בחודש?
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
