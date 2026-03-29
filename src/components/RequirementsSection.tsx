@@ -20,7 +20,7 @@ const cards = [
   },
   {
     emoji: "🌍",
-    title: "אזרחות מתאימה",
+    title: "אזרחות אמריקאית",
     desc: "תנאים מועדפים",
     highlighted: true,
     badge: "הטבה מיוחדת",
