@@ -37,7 +37,7 @@ const RequirementsSection = () => (
         transition={{ duration: 0.5, ease }}
         className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 text-center"
       >
-        דרישות קדם
+        ​
       </motion.p>
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
