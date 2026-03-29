@@ -60,15 +60,9 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8, ease }}
-                className="text-navy-dark-foreground/70 mt-8 text-base md:text-lg max-w-lg mx-auto leading-relaxed font-serif whitespace-pre-line"
+                className="text-navy-dark-foreground/70 mt-8 text-base md:text-lg max-w-lg mx-auto leading-loose font-serif whitespace-pre-line"
               >
-                ליווי והכשרה אישית
-                <br />
-                מגורים + רכב צמוד
-                <br />
-                אנרגיה צעירה
-                <br />
-                לא עובדים שבתות וחגים
+                {"ליווי והכשרה אישית\n\nמגורים + רכב צמוד\n\nאנרגיה צעירה\n\nלא עובדים שבתות וחגים"}
               </motion.p>
               <motion.button
                 initial={{ opacity: 0, y: 16 }}
