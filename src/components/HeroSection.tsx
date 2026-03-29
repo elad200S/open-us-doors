@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import USAFlag from "./USAFlag";
+import logoImg from "@/assets/logo.png";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -16,21 +16,19 @@ const HeroSection = () => {
       }} />
 
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20 w-full relative z-10">
-        <div className="grid md:grid-cols-[55fr_45fr] gap-12 md:gap-8 items-center">
-          {/* Flag side — left on desktop */}
+        <div className="flex flex-col items-center text-center">
+          {/* Logo centered */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease }}
-            className="order-1 flex justify-center items-center"
+            className="mb-8"
           >
-            <div className="w-full max-w-lg flex justify-center">
-              <USAFlag />
-            </div>
+            <img src={logoImg} alt="Money Overseas" className="h-28 md:h-36 object-contain" />
           </motion.div>
 
-          {/* Text side — right on desktop (RTL natural) */}
-          <div className="order-2">
+          {/* Text content centered */}
+          <div>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,7 +57,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8, ease }}
-              className="text-navy-dark-foreground/50 mt-6 text-base md:text-lg max-w-md leading-relaxed"
+              className="text-navy-dark-foreground/50 mt-6 text-base md:text-lg max-w-lg mx-auto leading-relaxed"
             >
               עבודות שטח בתחומי הבית בארה״ב — Garage Door, Locksmith, Air Duct, Chimney ועוד. עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
             </motion.p>
@@ -76,7 +74,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.4, ease }}
-              className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-navy-dark-foreground/50 text-sm"
+              className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-navy-dark-foreground/50 text-sm"
             >
               <span>✓ ללא עלות</span>
               <span>✓ ללא התחייבות</span>
