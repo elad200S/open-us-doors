@@ -71,11 +71,6 @@ const RequirementsSection = () => (
 
             <div className="text-4xl mb-5 flex justify-center">
               <span>{card.emoji}</span>
-              {false && (
-                <span />
-              ) || (
-                null
-              )}
             </div>
 
             <h3 className="text-lg font-bold text-navy mb-1">{card.title}</h3>
