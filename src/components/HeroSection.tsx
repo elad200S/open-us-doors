@@ -32,7 +32,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease }}
               className="mb-12"
             >
-              <span className="text-4xl md:text-5xl font-black tracking-tight text-navy-dark-foreground font-serif">Money Over Seas</span>
+              <span className="text-4xl md:text-5xl font-black tracking-tight text-navy-dark-foreground font-serif">M-O-S</span>
             </motion.div>
 
             {/* Text content centered */}
@@ -60,19 +60,9 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8, ease }}
-                className="text-navy-dark-foreground/50 mt-8 text-base md:text-lg max-w-lg mx-auto leading-relaxed font-serif"
+                className="text-navy-dark-foreground/70 mt-8 text-base md:text-lg max-w-lg mx-auto leading-loose font-serif whitespace-pre-line"
               >
-                עבודות שטח בתחומי הבית
-                <br />
-                Garage Door,
-                <br />
-                Locksmith,
-                <br />
-                Air Duct,
-                <br />
-                Chimney
-                <br />
-                עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
+                {"ליווי והכשרה אישית\n\nמגורים + רכב צמוד\n\nאנרגיה צעירה\n\nלא עובדים שבתות וחגים"}
               </motion.p>
               <motion.button
                 initial={{ opacity: 0, y: 16 }}
