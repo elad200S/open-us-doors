@@ -97,7 +97,7 @@ const LeadFormSection = () => {
               <h3 className="text-xl font-bold text-navy-dark-foreground mb-3">!קיבלנו! נחזור אליך בקרוב</h3>
               <p className="text-navy-dark-foreground/50 text-sm mb-6">בינתיים אפשר לכתוב לנו בוואטסאפ:</p>
               <a
-                href="https://wa.link/wbci19"
+                href="https://wa.me/12164079325"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
