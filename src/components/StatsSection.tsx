@@ -25,7 +25,7 @@ const StatsSection = () => (
                 : ""
             }`}
           >
-            <p className="text-cta-blue-foreground font-black text-4xl md:text-5xl leading-none mb-2">
+            <p className="text-cta-blue-foreground font-black text-4xl md:text-5xl leading-none mb-2 font-serif">
               {s.value}
             </p>
             <p className="text-cta-blue-foreground/70 text-sm md:text-base font-medium">

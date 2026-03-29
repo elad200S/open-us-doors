@@ -122,7 +122,7 @@ const LeadFormSection = () => {
                 type="submit"
                 className="w-full bg-cta-blue text-cta-blue-foreground font-bold text-sm py-4 rounded-xl transition-all duration-200 hover:scale-[1.01] active:scale-[0.98] shadow-[0_4px_16px_rgba(58,125,255,0.25)] mt-2"
               >
-                בדקו התאמה
+                בואו לעבוד איתנו
               </button>
 
               <p className="text-center text-muted-foreground/60 text-xs mt-3">🔒 הפרטים שלך לא מועברים לאף גורם חיצוני</p>

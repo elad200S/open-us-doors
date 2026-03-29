@@ -5,7 +5,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-16 items-center justify-between flex flex-row">
         {/* CTA button on the left */}
         <button
           onClick={scrollToForm}
