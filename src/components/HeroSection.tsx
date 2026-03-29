@@ -88,7 +88,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.4, ease }}
-                className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-navy-dark-foreground/50 text-sm"
+                className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-accent text-sm"
               >
                 <span>✓ ללא עלות</span>
                 <span>✓ ללא התחייבות</span>
