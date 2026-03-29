@@ -89,9 +89,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 1.4, ease }}
                 className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-accent text-sm"
               >
-                <span>✓ ללא עלות</span>
-                <span>✓ ללא התחייבות</span>
-                <span>✓ נציג יחזור תוך 24 שעות</span>
+                <span> ללא עלות</span>
+                <span> ללא התחייבות</span>
+                <span> נציג יחזור תוך 24 שעות</span>
               </motion.div>
             </div>
           </div>
