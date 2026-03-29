@@ -50,7 +50,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5, ease }}
-                className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight text-4xl font-serif"
+                className="text-navy-dark-foreground font-black leading-[1.05] tracking-tight font-serif text-6xl"
                 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
               >
                 תעבוד.
@@ -66,9 +66,19 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8, ease }}
-                className="text-navy-dark-foreground/50 mt-8 text-base md:text-lg max-w-lg mx-auto leading-relaxed"
+                className="text-navy-dark-foreground/50 mt-8 text-base md:text-lg max-w-lg mx-auto leading-relaxed font-serif"
               >
-                עבודות שטח בתחומי הבית — Garage Door, Locksmith, Air Duct, Chimney ועוד. עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
+                עבודות שטח בתחומי הבית
+                <br />
+                Garage Door,
+                <br />
+                Locksmith,
+                <br />
+                Air Duct,
+                <br />
+                Chimney
+                <br />
+                עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
               </motion.p>
               <motion.button
                 initial={{ opacity: 0, y: 16 }}
