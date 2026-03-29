@@ -33,7 +33,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease }}
               className="mb-12"
             >
-              <img src={logoImg} alt="Money Overseas" className="h-28 md:h-36 object-contain drop-shadow-lg" />
+              <img src={logoImg} alt="Money Overseas" className="h-28 md:h-36 object-contain mix-blend-lighten" />
             </motion.div>
 
             {/* Text content centered */}

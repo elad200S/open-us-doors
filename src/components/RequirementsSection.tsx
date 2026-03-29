@@ -28,7 +28,7 @@ const cards = [
 ];
 
 const RequirementsSection = () => (
-  <section className="py-24 md:py-32 bg-secondary">
+  <section className="py-24 md:py-32 bg-background">
     <div className="max-w-6xl mx-auto px-6">
       <motion.p
         initial={{ opacity: 0, y: 12 }}
