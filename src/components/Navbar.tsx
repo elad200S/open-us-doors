@@ -9,7 +9,7 @@ const Navbar = () => {
         {/* CTA button on the left */}
         <button
           onClick={scrollToForm}
-          className="bg-usa-red text-usa-red-foreground text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+          className="bg-cta-blue text-cta-blue-foreground text-sm font-semibold px-5 py-2.5 rounded-lg transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
         >
           השאר פרטים
         </button>

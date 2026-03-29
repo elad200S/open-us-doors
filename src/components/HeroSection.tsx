@@ -41,7 +41,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease }}
               className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-8"
             >
-              הזדמנויות עבודה בארה״ב 🇺🇸
+              הזדמנויות עבודה בחו״ל 🌍
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -54,9 +54,9 @@ const HeroSection = () => {
               <br />
               תרוויח.
               <br />
-              <span className="relative inline-block">
+                <span className="relative inline-block">
                 תתקדם.
-                <span className="absolute bottom-0 right-0 w-full h-1 bg-usa-red rounded-full" />
+                <span className="absolute bottom-0 right-0 w-full h-1 bg-cta-blue rounded-full" />
               </span>
             </motion.h1>
             <motion.p
@@ -65,14 +65,14 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8, ease }}
               className="text-navy-dark-foreground/50 mt-8 text-base md:text-lg max-w-lg mx-auto leading-relaxed"
             >
-              עבודות שטח בתחומי הבית בארה״ב — Garage Door, Locksmith, Air Duct, Chimney ועוד. עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
+              עבודות שטח בתחומי הבית — Garage Door, Locksmith, Air Duct, Chimney ועוד. עם הכשרה מקצועית, לידים אמיתיים ואופציות קידום.
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.1, ease }}
               onClick={scrollToForm}
-              className="mt-10 bg-usa-red text-usa-red-foreground font-bold text-base px-10 py-4 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(178,34,52,0.3)] hover:shadow-[0_0_30px_rgba(178,34,52,0.5)]"
+              className="mt-10 bg-cta-blue text-cta-blue-foreground font-bold text-base px-10 py-4 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(58,125,255,0.3)] hover:shadow-[0_0_30px_rgba(58,125,255,0.5)]"
             >
               רוצה לשמוע עוד? השאר פרטים ›
             </motion.button>

@@ -60,6 +60,10 @@ export default {
           DEFAULT: "hsl(var(--usa-red))",
           foreground: "hsl(var(--usa-red-foreground))",
         },
+        "cta-blue": {
+          DEFAULT: "hsl(var(--cta-blue))",
+          foreground: "hsl(var(--cta-blue-foreground))",
+        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",

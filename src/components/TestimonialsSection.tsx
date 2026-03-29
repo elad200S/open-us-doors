@@ -7,14 +7,14 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-24 md:py-32 bg-usa-red">
+  <section className="py-24 md:py-32 bg-cta-blue">
     <div className="max-w-6xl mx-auto px-6">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="text-usa-red-foreground text-3xl md:text-4xl font-black mb-16 text-center"
+        className="text-cta-blue-foreground text-3xl md:text-4xl font-black mb-16 text-center"
       >
         מה אומרים אלה שכבר שם
       </motion.h2>

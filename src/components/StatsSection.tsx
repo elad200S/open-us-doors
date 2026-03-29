@@ -9,7 +9,7 @@ const stats = [
 ];
 
 const StatsSection = () => (
-  <section className="bg-usa-red py-14 md:py-16">
+  <section className="bg-cta-blue py-14 md:py-16">
     <div className="max-w-5xl mx-auto px-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-0">
         {stats.map((s, i) => (
@@ -21,14 +21,14 @@ const StatsSection = () => (
             transition={{ duration: 0.5, delay: i * 0.12, ease }}
             className={`flex-1 text-center ${
               i < stats.length - 1
-                ? "md:border-l md:border-usa-red-foreground/20"
+                ? "md:border-l md:border-cta-blue-foreground/20"
                 : ""
             }`}
           >
-            <p className="text-usa-red-foreground font-black text-4xl md:text-5xl leading-none mb-2">
+            <p className="text-cta-blue-foreground font-black text-4xl md:text-5xl leading-none mb-2">
               {s.value}
             </p>
-            <p className="text-usa-red-foreground/70 text-sm md:text-base font-medium">
+            <p className="text-cta-blue-foreground/70 text-sm md:text-base font-medium">
               {s.label}
             </p>
           </motion.div>
