@@ -32,7 +32,13 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease }}
               className="mb-12"
             >
-              <span className="text-4xl md:text-5xl font-black tracking-tight text-navy-dark-foreground font-serif bg-primary-foreground text-secondary-foreground">Money Over Seas</span>
+              <span
+                className="text-4xl md:text-5xl font-black tracking-tight font-serif"
+                style={{
+                  color: '#0B0B0B',
+                  textShadow: '0 0 10px rgba(255,255,255,0.4), 0 0 20px rgba(255,255,255,0.25), 0 0 40px rgba(100,150,255,0.2)',
+                }}
+              >Money Over Seas</span>
             </motion.div>
 
             {/* Text content centered */}
