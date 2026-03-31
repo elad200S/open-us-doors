@@ -38,7 +38,7 @@ const LeadFormSection = () => {
     `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-sm outline-none focus:border-cta-blue focus:ring-1 focus:ring-cta-blue/30 transition-all duration-200 appearance-none cursor-pointer ${value ? "text-foreground" : "text-muted-foreground"}`;
 
   return (
-    <section id="lead-form" className="py-20 md:py-28 bg-background">
+    <div id="lead-form" className="py-20 md:py-28">
       <div className="max-w-md mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -153,7 +153,7 @@ const LeadFormSection = () => {
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
 };
 
