@@ -20,6 +20,7 @@ const Index = () => (
     <LeadFormSection />
     <ProgramSection />
     <HowItWorksSection />
+    <BottomCTA />
     <Footer />
     <WhatsAppFloat />
   </>
