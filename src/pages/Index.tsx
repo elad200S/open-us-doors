@@ -9,6 +9,7 @@ import LeadFormSection from "@/components/LeadFormSection";
 import BottomCTA from "@/components/BottomCTA";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => (
   <>
