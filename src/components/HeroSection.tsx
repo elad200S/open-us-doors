@@ -39,7 +39,14 @@ const HeroSection = () => {
                   background: 'none',
                   textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(200,220,255,0.2), 0 0 60px rgba(100,150,255,0.1)',
                 }}
-              >Money Over Seas</span>
+               >Money Over Seas</span>
+              <span
+                className="block mt-3 text-lg md:text-xl font-serif font-medium tracking-wide"
+                style={{
+                  color: '#EAEAEA',
+                  textShadow: '0 0 6px rgba(255,255,255,0.15)',
+                }}
+              >עוזרים לישראלים להרוויח מעבר לים</span>
             </motion.div>
 
             {/* Text content centered */}
