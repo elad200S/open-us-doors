@@ -41,7 +41,7 @@ const HeroSection = () => {
                 }}
                >Money Over Seas</span>
               <span
-                className="block mt-3 text-lg md:text-xl font-serif font-medium tracking-wide"
+                className="block mt-3 tracking-wide md:text-7xl text-navy font-sans text-3xl font-extrabold"
                 style={{
                   color: '#EAEAEA',
                   textShadow: '0 0 6px rgba(255,255,255,0.15)',
