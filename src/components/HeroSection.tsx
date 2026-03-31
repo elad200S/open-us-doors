@@ -41,10 +41,10 @@ const HeroSection = () => {
                 }}
                >Money Over Seas</span>
               <span
-                className="block mt-6 md:mt-8 tracking-wide md:text-7xl text-navy font-sans text-3xl font-extrabold"
+                className="block mt-5 md:mt-5 tracking-wide md:text-7xl font-sans text-3xl font-extrabold"
                 style={{
-                  color: '#EAEAEA',
-                  textShadow: '0 0 10px rgba(255,255,255,0.35), 0 0 25px rgba(255,255,255,0.15), 0 0 50px rgba(150,180,255,0.1)',
+                  color: '#1E2A78',
+                  textShadow: '0 0 12px rgba(30,42,120,0.25), 0 0 30px rgba(30,42,120,0.1)',
                 }}
               >עוזרים לישראלים להרוויח מעבר לים</span>
             </motion.div>
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease }}
                 onClick={scrollToForm}
-                className="mt-10 bg-cta-blue text-cta-blue-foreground font-bold text-base px-10 py-4 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(58,125,255,0.3)] hover:shadow-[0_0_30px_rgba(58,125,255,0.5)]"
+                className="mt-10 bg-cta-blue text-cta-blue-foreground font-bold text-base px-10 py-4 rounded-full transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(58,125,255,0.3)] hover:shadow-[0_0_30px_rgba(58,125,255,0.5)]"
               >
                 רוצה לשמוע עוד? השאר פרטים ›
               </motion.button>

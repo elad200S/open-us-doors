@@ -4,7 +4,7 @@ const WhatsAppFloat = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-20 left-6 z-50">
       {showTooltip && (
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs font-medium px-3 py-1.5 rounded-md whitespace-nowrap">
           דברו איתנו בוואטסאפ

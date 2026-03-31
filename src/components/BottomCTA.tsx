@@ -14,7 +14,7 @@ const BottomCTA = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           onClick={scrollToForm}
-          className="bg-cta-blue hover:bg-cta-blue/90 text-white text-lg md:text-xl font-bold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-cta-blue hover:bg-cta-blue/90 text-white text-lg md:text-xl font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         >
           רוצה להרוויח איתנו כסף
         </motion.button>
