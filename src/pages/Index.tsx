@@ -40,6 +40,7 @@ const Index = () => (
     <BottomCTA />
     <Footer />
     <WhatsAppFloat />
+    <ScrollToTop />
   </>
 );
 
