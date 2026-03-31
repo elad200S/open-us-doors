@@ -83,7 +83,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease }}
                 onClick={scrollToForm}
-                className="mt-10 bg-cta-blue text-cta-blue-foreground font-bold text-base px-10 py-4 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(58,125,255,0.3)] hover:shadow-[0_0_30px_rgba(58,125,255,0.5)]"
+                className="mt-10 bg-cta-blue text-cta-blue-foreground font-bold text-base px-10 py-4 rounded-full transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_20px_rgba(58,125,255,0.3)] hover:shadow-[0_0_30px_rgba(58,125,255,0.5)]"
               >
                 רוצה לשמוע עוד? השאר פרטים ›
               </motion.button>
