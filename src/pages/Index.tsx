@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LifestyleSection from "@/components/LifestyleSection";
-import LocationsCarousel from "@/components/LocationsCarousel";
+
 import StatsSection from "@/components/StatsSection";
 import RequirementsSection from "@/components/RequirementsSection";
 import ProgramSection from "@/components/ProgramSection";
@@ -16,7 +16,7 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <LifestyleSection />
-    <LocationsCarousel />
+    
     <StatsSection />
     <RequirementsSection />
     <LeadFormSection />
