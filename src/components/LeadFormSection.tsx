@@ -153,7 +153,7 @@ const LeadFormSection = () => {
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -79,7 +79,7 @@ const RequirementsSection = () => (
         ))}
       </div>
     </div>
-  </section>
+  </div>
 );
 
 export default RequirementsSection;

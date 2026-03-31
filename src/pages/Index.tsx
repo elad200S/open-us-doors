@@ -16,8 +16,24 @@ const Index = () => (
     <HeroSection />
     <LifestyleSection />
     <StatsSection />
-    <RequirementsSection />
-    <LeadFormSection />
+    <section className="relative overflow-hidden">
+      {/* Shared video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="/placeholder.svg"
+      >
+        <source src="/videos/stats-bg.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="relative z-10">
+        <RequirementsSection />
+        <LeadFormSection />
+      </div>
+    </section>
     <ProgramSection />
     <HowItWorksSection />
     <BottomCTA />
