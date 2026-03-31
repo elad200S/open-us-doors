@@ -6,6 +6,7 @@ import RequirementsSection from "@/components/RequirementsSection";
 import ProgramSection from "@/components/ProgramSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import LeadFormSection from "@/components/LeadFormSection";
+import BottomCTA from "@/components/BottomCTA";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
