@@ -34,8 +34,18 @@ const LifestyleSection = () => (
             transition={{ duration: 0.7, delay: 0.1, ease }}
             className={`flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-10 md:gap-16`}
           >
-            {/* Image */}
-            <div className="w-full md:w-1/2">
+            {/* Text – always first on mobile */}
+            <div className="w-full md:w-1/2 text-center md:text-right order-1 md:order-none">
+              <h3 className="text-navy text-2xl md:text-3xl font-black leading-snug mb-4 font-serif">
+                {block.headline}
+              </h3>
+              <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 md:mr-0">
+                {block.text}
+              </p>
+            </div>
+
+            {/* Image – below text on mobile */}
+            <div className="w-full md:w-1/2 order-2 md:order-none">
               <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] group">
                 <img
                   src={block.image}
@@ -44,16 +54,6 @@ const LifestyleSection = () => (
                   loading="lazy"
                 />
               </div>
-            </div>
-
-            {/* Text */}
-            <div className="w-full md:w-1/2 text-center md:text-right">
-              <h3 className="text-navy text-2xl md:text-3xl font-black leading-snug mb-4 font-serif">
-                {block.headline}
-              </h3>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 md:mr-0">
-                {block.text}
-              </p>
             </div>
           </motion.div>
         );
