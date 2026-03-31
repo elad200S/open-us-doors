@@ -16,7 +16,7 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <LifestyleSection />
-    <LocationsCarousel />
+    
     <StatsSection />
     <RequirementsSection />
     <LeadFormSection />
