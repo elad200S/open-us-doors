@@ -28,8 +28,23 @@ const cards = [
 ];
 
 const RequirementsSection = () => (
-  <section className="py-24 md:py-32 bg-background">
-    <div className="max-w-6xl mx-auto px-6 font-serif">
+  <section className="relative py-24 md:py-32 overflow-hidden">
+    {/* Video background */}
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover"
+      poster="/placeholder.svg"
+    >
+      <source src="/videos/stats-bg.mp4" type="video/mp4" />
+    </video>
+
+    {/* Overlay for readability */}
+    <div className="absolute inset-0 bg-background/80" />
+
+    <div className="relative z-10 max-w-6xl mx-auto px-6 font-serif">
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
