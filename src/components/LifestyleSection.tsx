@@ -21,8 +21,23 @@ const blocks = [
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const LifestyleSection = () => (
-  <section className="py-24 md:py-32 bg-background border-t-[6px] border-cta-blue">
-    <div className="max-w-6xl mx-auto px-6 space-y-20 md:space-y-28">
+  <section className="relative py-24 md:py-32 border-t-[6px] border-cta-blue overflow-hidden">
+    {/* Video background */}
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover"
+      poster="/placeholder.svg"
+    >
+      <source src="/videos/lifestyle-bg.mp4" type="video/mp4" />
+    </video>
+
+    {/* Dark overlay for readability */}
+    <div className="absolute inset-0 bg-black/60" />
+
+    <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-20 md:space-y-28">
       {blocks.map((block, i) => {
         const reversed = i % 2 === 1;
         return (
@@ -36,10 +51,10 @@ const LifestyleSection = () => (
           >
             {/* Text – always first on mobile */}
             <div className="w-full md:w-1/2 text-center md:text-right order-1 md:order-none">
-              <h3 className="text-navy text-2xl md:text-3xl font-black leading-snug mb-4 font-serif">
+              <h3 className="text-white text-2xl md:text-3xl font-black leading-snug mb-4 font-serif">
                 {block.headline}
               </h3>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 md:mr-0">
+              <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 md:mr-0">
                 {block.text}
               </p>
             </div>
