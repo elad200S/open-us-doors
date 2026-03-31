@@ -11,7 +11,7 @@ const stats = [
 const StatsSection = () => (
   <section className="bg-cta-blue py-14 md:py-16">
     <div className="max-w-5xl mx-auto px-6">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-0">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0 md:gap-0">
         {stats.map((s, i) => (
           <motion.div
             key={i}
@@ -19,9 +19,9 @@ const StatsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: i * 0.12, ease }}
-            className={`flex-1 text-center ${
+            className={`flex-1 text-center py-6 md:py-0 ${
               i < stats.length - 1
-                ? "md:border-l md:border-cta-blue-foreground/20"
+                ? "border-b border-cta-blue-foreground/15 md:border-b-0 md:border-l md:border-cta-blue-foreground/20"
                 : ""
             }`}
           >
