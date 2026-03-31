@@ -33,10 +33,11 @@ const HeroSection = () => {
               className="mb-12"
             >
               <span
-                className="text-4xl md:text-5xl font-black tracking-tight font-serif"
+                className="text-4xl md:text-5xl font-black tracking-tight font-serif bg-transparent"
                 style={{
-                  color: '#0B0B0B',
-                  textShadow: '0 0 10px rgba(255,255,255,0.4), 0 0 20px rgba(255,255,255,0.25), 0 0 40px rgba(100,150,255,0.2)',
+                  color: '#111111',
+                  background: 'none',
+                  textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(200,220,255,0.2), 0 0 60px rgba(100,150,255,0.1)',
                 }}
               >Money Over Seas</span>
             </motion.div>
