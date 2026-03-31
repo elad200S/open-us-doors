@@ -41,10 +41,10 @@ const HeroSection = () => {
                 }}
                >Money Over Seas</span>
               <span
-                className="block mt-6 md:mt-8 tracking-wide md:text-7xl text-navy font-sans text-3xl font-extrabold"
+                className="block mt-5 md:mt-5 tracking-wide md:text-7xl font-sans text-3xl font-extrabold"
                 style={{
-                  color: '#EAEAEA',
-                  textShadow: '0 0 10px rgba(255,255,255,0.35), 0 0 25px rgba(255,255,255,0.15), 0 0 50px rgba(150,180,255,0.1)',
+                  color: '#1E2A78',
+                  textShadow: '0 0 12px rgba(30,42,120,0.25), 0 0 30px rgba(30,42,120,0.1)',
                 }}
               >עוזרים לישראלים להרוויח מעבר לים</span>
             </motion.div>
