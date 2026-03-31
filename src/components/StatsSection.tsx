@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import statsBg from "@/assets/stats-bg.png";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -9,8 +10,9 @@ const stats = [
 ];
 
 const StatsSection = () => (
-  <section className="bg-cta-blue py-14 md:py-16">
-    <div className="max-w-5xl mx-auto px-6">
+  <section className="relative py-14 md:py-16 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${statsBg})` }}>
+    <div className="absolute inset-0 bg-black/45" />
+    <div className="relative z-10 max-w-5xl mx-auto px-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0 md:gap-0">
         {stats.map((s, i) => (
           <motion.div
