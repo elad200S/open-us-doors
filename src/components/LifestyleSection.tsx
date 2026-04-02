@@ -4,8 +4,13 @@ import lifestyle1 from "@/assets/lifestyle-1.jpg";
 import lifestyle2 from "@/assets/lifestyle-2.jpg";
 import lifestyle3 from "@/assets/lifestyle-3.jpg";
 import lifestyle4 from "@/assets/lifestyle-4.jpg";
+import lifestyleBg1 from "@/assets/lifestyle-bg-1.jpg";
+import lifestyleBg2 from "@/assets/lifestyle-bg-2.jpg";
+import lifestyleBg3 from "@/assets/lifestyle-bg-3.jpg";
+import lifestyleBg4 from "@/assets/lifestyle-bg-4.jpg";
 
 const sliderImages = [lifestyle1, lifestyle2, lifestyle3, lifestyle4];
+const bgSliderImages = [lifestyleBg1, lifestyleBg2, lifestyleBg3, lifestyleBg4];
 
 const blocks = [
   {
@@ -24,16 +29,17 @@ const blocks = [
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const AutoFadeSlider = () => {
+const useAutoSlider = (length: number, interval = 3000) => {
   const [current, setCurrent] = useState(0);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % sliderImages.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    const id = setInterval(() => setCurrent((p) => (p + 1) % length), interval);
+    return () => clearInterval(id);
+  }, [length, interval]);
+  return current;
+};
 
+const AutoFadeSlider = () => {
+  const current = useAutoSlider(sliderImages.length);
   return (
     <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)]">
       {sliderImages.map((src, i) => (
@@ -46,6 +52,31 @@ const AutoFadeSlider = () => {
           loading="eager"
         />
       ))}
+    </div>
+  );
+};
+
+const BgFadeSlider = ({ children }: { children: React.ReactNode }) => {
+  const current = useAutoSlider(bgSliderImages.length);
+  return (
+    <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)]">
+      {/* Background images */}
+      {bgSliderImages.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+          style={{ opacity: i === current ? 1 : 0 }}
+          loading="eager"
+        />
+      ))}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+      {/* Static content */}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };
@@ -88,6 +119,10 @@ const LifestyleSection = () => (
             <div className="w-full md:w-1/2 order-2 md:order-none">
               {i === 0 ? (
                 <AutoFadeSlider />
+              ) : i === 1 ? (
+                <BgFadeSlider>
+                  <div className="w-full aspect-[4/3]" />
+                </BgFadeSlider>
               ) : (
                 <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] group">
                   <img
