@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSljYYRPcB1mjgzPmUuJuo3rsc9s_vulep20kmnDVDP2hMQxHfE37fX9BF_NjBSJu4/exec";
+const OWNER_PHONE = "12164079325";
+
 const visaOptions = ["כן", "לא", "בתהליכים"];
 const citizenshipOptions = ["ישראלי", "אמריקאי", "אחר"];
 const startOptions = ["עוד חודש", "עוד חודשיים", "שלושה חודשים", "מעל שלושה חודשים"];
@@ -12,9 +15,11 @@ const LeadFormSection = () => {
   const [citizenship, setCitizenship] = useState("");
   const [startTime, setStartTime] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const errs: Record<string, boolean> = {};
     if (!name.trim()) errs.name = true;
@@ -26,7 +31,23 @@ const LeadFormSection = () => {
       setErrors(errs);
       return;
     }
-    setSubmitted(true);
+
+    setLoading(true);
+    setError("");
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, visa, citizenship, startTime }),
+      });
+      setSubmitted(true);
+    } catch {
+      setError("משהו השתבש, נסו שוב או כתבו לנו בוואטסאפ");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const clearError = (field: string) => setErrors((p) => ({ ...p, [field]: false }));
@@ -36,6 +57,8 @@ const LeadFormSection = () => {
 
   const selectClass = (field: string, value: string) =>
     `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-sm outline-none focus:border-cta-blue focus:ring-1 focus:ring-cta-blue/30 transition-all duration-200 appearance-none cursor-pointer ${value ? "text-foreground" : "text-muted-foreground"}`;
+
+  const waMessage = encodeURIComponent(`היי, ליד חדש מהאתר:\nשם: ${name}\nטלפון: ${phone}`);
 
   return (
     <div id="lead-form" className="py-20 md:py-28">
@@ -118,11 +141,16 @@ const LeadFormSection = () => {
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground text-xs">▼</span>
               </div>
 
+              {error && (
+                <p className="text-destructive text-sm text-center">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-cta-blue text-cta-blue-foreground font-bold text-sm py-4 rounded-full transition-all duration-200 hover:scale-[1.01] active:scale-[0.98] shadow-[0_4px_16px_rgba(58,125,255,0.25)] mt-2"
+                disabled={loading}
+                className="w-full bg-cta-blue text-cta-blue-foreground font-bold text-sm py-4 rounded-full transition-all duration-200 hover:scale-[1.01] active:scale-[0.98] shadow-[0_4px_16px_rgba(58,125,255,0.25)] mt-2 disabled:opacity-70 disabled:scale-100"
               >
-                בואו לעבוד איתנו
+                {loading ? "שולח..." : "בואו לעבוד איתנו"}
               </button>
 
               <p className="text-center text-muted-foreground/60 text-xs mt-3">🔒 הפרטים שלך לא מועברים לאף גורם חיצוני</p>
@@ -139,7 +167,7 @@ const LeadFormSection = () => {
               <h3 className="text-xl font-bold text-foreground mb-3">!קיבלנו! נחזור אליך בקרוב</h3>
               <p className="text-muted-foreground text-sm mb-6">בינתיים אפשר לכתוב לנו בוואטסאפ:</p>
               <a
-                href="https://wa.me/12164079325"
+                href={`https://wa.me/${OWNER_PHONE}?text=${waMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
