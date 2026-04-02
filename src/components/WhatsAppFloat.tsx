@@ -11,7 +11,7 @@ const WhatsAppFloat = () => {
         </div>
       )}
       <a
-        href="https://wa.me/12164079325"
+        href="https://wa.link/2kl5np"
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setShowTooltip(true)}
