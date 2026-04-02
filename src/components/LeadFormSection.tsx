@@ -83,7 +83,7 @@ const LeadFormSection = () => {
   const selectClass = (field: string, value: string) =>
     `w-full bg-card border ${errors[field] ? "border-destructive" : "border-border"} rounded-xl py-3 px-4 text-sm outline-none focus:border-cta-blue focus:ring-1 focus:ring-cta-blue/30 transition-all duration-200 appearance-none cursor-pointer ${value ? "text-foreground" : "text-muted-foreground"}`;
 
-  const waMessage = encodeURIComponent(`היי, ליד חדש מהאתר:\nשם: ${name}\nטלפון: ${phone}`);
+  const waMessage = encodeURIComponent(`היי.. השארתי לך פרטים באתר אשמח לשיחת הסבר`);
 
   return (
     <div id="lead-form" className="py-20 md:py-28">
