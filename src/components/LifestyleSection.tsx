@@ -124,6 +124,22 @@ const LifestyleSection = () => (
           </motion.div>
         );
       })}
+
+      {/* Third block - text only */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.1, ease }}
+        className="text-center"
+      >
+        <h3 className="text-white text-2xl md:text-3xl font-black leading-snug mb-4 font-serif">
+          ליווי מלא – מהשלב הראשון ועד המשכורת הראשונה
+        </h3>
+        <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-md mx-auto">
+          אנחנו איתך בכל שלב, עד שאתה נכנס לעבודה ומתחיל להרוויח
+        </p>
+      </motion.div>
     </div>
   </section>
 );
