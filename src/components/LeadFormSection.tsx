@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxeWh69-vwjg1z35hk5Q1RBWAoZvs0-yetxLY6s57Zda2zHx2TVV3wlUko_YhHHFICw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCNhoTV10ROgJsbAcnFjorDt23hkIB9btigQ2TWjTAWKtked1E6UFDcyjSxA5nGVCQ/exec";
 const OWNER_PHONE = "12164079325";
 
 const visaOptions = ["כן", "לא", "בתהליכים"];
