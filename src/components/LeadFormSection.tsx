@@ -38,20 +38,24 @@ const LeadFormSection = () => {
     try {
       const now = new Date();
       const pad = (n: number) => n.toString().padStart(2, "0");
-      const timestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+      const timestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+      const payload = {
+        timestamp: timestamp,
+        full_name: name.trim(),
+        phone: phone.trim(),
+        visa_status: visa,
+        citizenship: citizenship,
+        start_time: startTime,
+      };
+
+      console.log("Submitting lead payload:", JSON.stringify(payload));
 
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          timestamp,
-          full_name: name,
-          phone,
-          citizenship,
-          visa_status: visa,
-          start_time: startTime,
-        }),
+        body: JSON.stringify(payload),
       });
       setSubmitted(true);
     } catch {
