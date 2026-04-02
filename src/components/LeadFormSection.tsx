@@ -38,12 +38,22 @@ const LeadFormSection = () => {
     try {
       const now = new Date();
       const pad = (n: number) => n.toString().padStart(2, "0");
-      const timestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+      const timestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+
+      const rawPhone = phone.trim().replace(/\D/g, "");
+      const normalizedPhone = rawPhone.startsWith("972")
+        ? "0" + rawPhone.slice(3)
+        : rawPhone.startsWith("0")
+        ? rawPhone
+        : "0" + rawPhone;
+      const formattedPhone = normalizedPhone.length === 10
+        ? `${normalizedPhone.slice(0, 3)}-${normalizedPhone.slice(3, 6)}-${normalizedPhone.slice(6)}`
+        : "'" + normalizedPhone;
 
       const payload = {
         timestamp: timestamp,
         full_name: name.trim(),
-        phone: phone.trim(),
+        phone: formattedPhone,
         visa_status: visa,
         citizenship: citizenship,
         start_time: startTime,
