@@ -115,19 +115,10 @@ const LifestyleSection = () => (
             <div className="w-full md:w-1/2 order-2 md:order-none">
               {i === 0 ? (
                 <AutoFadeSlider />
-              ) : i === 1 ? (
+              ) : (
                 <BgFadeSlider>
                   <div className="w-full aspect-[4/3]" />
                 </BgFadeSlider>
-              ) : (
-                <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.10)] group">
-                  <img
-                    src="/placeholder.svg"
-                    alt={block.headline}
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
               )}
             </div>
           </motion.div>
