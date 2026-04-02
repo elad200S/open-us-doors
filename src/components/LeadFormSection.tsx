@@ -36,11 +36,22 @@ const LeadFormSection = () => {
     setError("");
 
     try {
+      const now = new Date();
+      const pad = (n: number) => n.toString().padStart(2, "0");
+      const timestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, visa, citizenship, startTime }),
+        body: JSON.stringify({
+          timestamp,
+          full_name: name,
+          phone,
+          citizenship,
+          visa_status: visa,
+          start_time: startTime,
+        }),
       });
       setSubmitted(true);
     } catch {
