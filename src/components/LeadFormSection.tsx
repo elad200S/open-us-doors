@@ -192,7 +192,7 @@ const LeadFormSection = () => {
               <h3 className="text-xl font-bold text-foreground mb-3">!קיבלנו! נחזור אליך בקרוב</h3>
               <p className="text-muted-foreground text-sm mb-6">בינתיים אפשר לכתוב לנו בוואטסאפ:</p>
               <a
-                href={`https://wa.me/${OWNER_PHONE}?text=${waMessage}`}
+                href={`https://wa.link/2kl5np`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
