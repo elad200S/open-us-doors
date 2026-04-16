@@ -50,6 +50,10 @@ const LeadFormSection = () => {
         ? `${normalizedPhone.slice(0, 3)}-${normalizedPhone.slice(3, 6)}-${normalizedPhone.slice(6)}`
         : "'" + normalizedPhone;
 
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmCampaign = urlParams.get("utm_campaign");
+      const campaign = utmCampaign && utmCampaign.trim() ? utmCampaign.trim() : "website_main";
+
       const payload = {
         timestamp: timestamp,
         full_name: name.trim(),
@@ -57,6 +61,7 @@ const LeadFormSection = () => {
         visa_status: visa,
         citizenship: citizenship,
         start_time: startTime,
+        campaign: campaign,
       };
 
       console.log("Submitting lead payload:", JSON.stringify(payload));
